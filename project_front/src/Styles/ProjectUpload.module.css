@@ -1,0 +1,73 @@
+.projectUploadContainer {
+    max-width: 500px;
+    margin: 5rem auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    box-shadow: 0 0 10px whitesmoke;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.formProjectU{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input, .fileInput {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    background: transparent;
+    color: white;
+}
+
+.fileInput {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.input:focus, .fileInput:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.25);
+}
+
+.button {
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.navigateButton{
+    font-size: 1rem;
+}
+
+.navigateButton:hover{
+    transform: translateX(-3px);
+}

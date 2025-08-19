@@ -1,0 +1,213 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.homeContainer {
+    width: 100%;
+    max-width: 1430px;
+    margin-inline: auto;
+
+}
+
+.nav {
+    height: 50px;
+    display: flex;
+    margin-top: 30px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navList {
+    display: flex;
+    list-style-type: none;
+}
+
+.navItem {
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navUser{
+    display: flex;
+    margin-left: 700px;
+}
+
+.logo {
+    width: 160px;
+    height: auto;
+}
+
+.navLink {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px 10px;
+    transition: 0.1s ease;
+}
+
+.navLink:hover {
+    color: blue;
+    border-radius: 5px;
+}
+
+.heroContainer {
+    display: block;
+    width: 70%;
+    height: auto;
+    margin-inline: auto;
+    margin-top: 10%;
+    margin-bottom: 15%;
+}
+
+.heroText {
+    color: white;
+    font-size: 3rem;
+    text-align: center;
+    font-family: "Mona Sans", serif;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.heroSubText {
+    color: white;
+    text-align: center;
+    font-size: 1.3rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: lighter;
+    margin-bottom: 30px;
+}
+
+.heroButton {
+    display: flex;
+    margin-inline: auto;
+    align-items: center;
+    justify-content: center;
+    width: 30rem;
+    height: 3rem;
+    font-family: "Mona Sans", serif;
+    font-size: 1rem;
+    color: white;
+    border-radius: 10px;
+    background-color: #05425b;
+    box-shadow: 0 0 10px white;
+}
+
+.quoteContainer {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-family: "Mona Sans", serif;
+    text-align: center;
+    padding: 50px 170px;
+}
+
+/* Responsiveness */
+
+@media screen and (min-width:1000px) and (max-width:1320px){
+    .heroContainer{
+        width: 50%;
+    }
+    
+    .heroText{
+        font-size: 1.5rem;
+    }
+    .heroSubText{
+        font-size: 0.9rem;
+    }
+
+    .quoteContainer{
+        padding: 0px;
+    }
+}
+
+@media screen and (min-width:834px) and (max-width:999px){
+    .heroContainer{
+        width: 70%;
+    }
+    .heroText{
+        font-size: 1.7rem;
+    }
+    .heroSubText{
+        font-size: 0.9rem;
+    }
+    .quoteContainer{
+        padding: 40px 60px;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:833px) {
+    .heroContainer{
+        width: 70%;
+    }
+    .heroText{
+        font-size: 1.7rem;
+    }
+    .heroSubText{
+        font-size: 0.9rem;
+    }
+    .quoteContainer{
+        padding: 40px 60px;
+    }
+    
+}
+
+@media screen and (min-width:480px) and (max-width:768px){
+    .navItem{
+        margin-right: 5px;
+    }
+    .heroContainer{
+        width: 80%;
+    }
+    .heroText{
+        font-size: 1.1rem;
+    }
+    .heroSubText{
+        font-size: 0.6rem;
+        margin-bottom: 15px;
+    }
+    .heroButton{
+        width: 20rem;
+        height: 2rem;
+        font-size: 0.6rem;
+    }
+    .logo{
+        width: 70px;
+    }
+    .quoteContainer{
+        padding: 20px 40px;
+        font-size: 10px;
+    }
+}
+
+@media screen and (min-width:340px) and (max-width:480px) {
+    .navItem{
+        margin-right: 2px;
+    }
+    .navLink{
+        font-size: 11px;
+    }
+    .heroContainer{
+        width: 80%;
+        margin-inline: auto;
+    }
+    .heroText{
+        font-size: 0.8rem;
+    }
+    .heroSubText{
+        font-size: 0.4rem;
+        margin-bottom: 15px;
+    }
+    .heroButton{
+        width: 15rem;
+        height: 2rem;
+        font-size: 0.48rem;
+    }
+    .logo{
+        width: 50px;
+    }
+    .quoteContainer{
+        padding: 10px 20px;
+        font-size: 8px;
+    }
+}

@@ -1,0 +1,103 @@
+.aboutPage {
+    max-width: 1430px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.aboutPage h1 {
+font-size: 3rem;
+margin-bottom: 100px;
+color: white;
+}
+
+.section {
+display: flex;
+flex-wrap: wrap;
+margin-bottom: 40px;
+align-items: center;
+}
+
+.section .text {
+flex: 1;
+padding: 20px;
+color: white;
+}
+
+.section .text h2 {
+font-size: 2rem;
+margin-bottom: 10px;
+color: white;
+}
+
+.section .text p {
+font-size: 1rem;
+color: white;
+font-weight: lighter;
+font-family:'Times New Roman', Times, serif;
+text-align: justify;
+}
+
+.section .image {
+flex: 1;
+text-align: center;
+}
+
+.section .image img {
+max-width: 100%;
+border-radius: 8px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.aboutBackButton{
+    font-size: 1.5rem;
+    display: flex;
+}
+
+.aboutBackButton:hover{
+    transform: translateX(-3px);
+}
+
+@media screen and (max-width: 800px) {
+    .aboutPage {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .aboutPage h1 {
+        font-size: 2.5rem;
+        margin-bottom: 50px;
+    }
+
+    .section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section .text {
+        padding: 15px;
+        text-align: center;
+    }
+
+    .section .text h2 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+
+    .section .text p {
+        font-size: 1rem;
+        text-align: justify;
+    }
+
+    .section .image {
+        margin-top: 20px;
+    }
+
+    .section .image img {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+}
+
+
+  

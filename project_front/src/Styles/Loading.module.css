@@ -1,0 +1,12 @@
+.loadingContainer {
+    display: flex;
+    justify-content: center; /* Horizontally center the loader */
+    align-items: center; /* Vertically center the loader */
+    background: transparent;
+    color: white;
+    width: 30px; /* Width of the container */
+    height: 30px; /* Height of the container */
+}
+  
+
+  

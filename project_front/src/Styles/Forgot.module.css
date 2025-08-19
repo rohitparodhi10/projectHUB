@@ -1,0 +1,109 @@
+/* Container styles */
+.forgotContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    
+}
+
+/* Header */
+.forgotContainer h2 {
+    color: #fff;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    
+}
+
+/* Form styling */
+.forgotForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 100%;
+    max-width: 400px; /* Restrict form width */
+}
+
+/* Input field styling */
+.input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1.2rem;
+    background: transparent;
+    color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.input:focus {
+    border-color: #007bff; /* Blue border on focus */
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Button styling */
+.button {
+    background-color: #007bff; /* Blue button */
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Success and Error messages */
+.success {
+    color: #28a745; /* Green for success */
+    font-size: 1rem;
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.error {
+    color: #dc3545; /* Red for error */
+    font-size: 1rem;
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+    .forgotContainer {
+        padding: 0 15px; /* Add some padding to the container */
+    }
+
+    .forgotForm {
+        width: 100%;
+        padding: 1.5rem; /* Adjust padding for smaller screens */
+        max-width: 100%; /* Ensure the form fits within the screen */
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        text-align: center; /* Center the header on small screens */
+    }
+
+    .input,
+    .button {
+        font-size: 0.9rem;
+        padding: 0.7rem;
+    }
+
+    .success, .error {
+        font-size: 0.9rem; /* Adjust the message font size */
+    }
+}

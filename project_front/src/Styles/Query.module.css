@@ -1,0 +1,90 @@
+/* Container for the form */
+.queryC{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.queryContainer {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    max-width: 600px;
+    height: 45%;
+    width: 100%; 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px whitesmoke;
+}
+
+/* Heading style */
+.heading {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+}
+
+/* Form and input styles */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: border 0.3s;
+}
+
+.input:focus {
+    border-color: #4A90E2;
+}
+
+.button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #4A90E2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #357ABD;
+}
+
+/* Success or error message */
+.success-message {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #28a745;
+    text-align: center;
+}
+
+.error-message {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #dc3545;
+    text-align: center;
+}
+
+.textMessage {
+    margin: 30px auto; /* Center the text horizontally */
+    font-size: 18px; /* Slightly larger font for better readability */
+    line-height: 1.6; /* Improved line spacing */
+    text-align: justify; /* Ensure the text is aligned neatly */
+    max-width: 800px; /* Limit the width for better readability */
+    padding: 15px 20px; /* Add some padding for a polished look */
+    color: white; /* Maintain the text color */
+    background: rgba(0, 0, 0, 0.6); /* Add a semi-transparent background */
+    border-radius: 10px; /* Smooth rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    font-family: 'Arial', sans-serif; /* Ensure clean and professional typography */
+}
+

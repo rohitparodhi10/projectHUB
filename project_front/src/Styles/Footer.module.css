@@ -1,0 +1,426 @@
+/* Footer Styles */
+.footer {
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 50px;
+    
+  }
+  
+  .footerContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px; /* Gap between sections */
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .footerSection {
+    flex: 1 1 300px; /* Each section takes up space flexibly */
+    margin: 10px 0;
+  }
+  
+  .footerSection h4 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #007BFF;
+  }
+  
+  .footerSection p,
+  .footerSection ul {
+    font-size: 1rem;
+    margin: 0;
+  }
+  
+  .footerSection ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    
+  }
+  
+  .footerSection ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footerSection ul li .quickLink {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footerSection ul li .quickLink:hover {
+    color: #007BFF;
+  }
+  
+  .socialLinks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .socialLinks a {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+  }
+  
+  .socialLinks a:hover {
+    background-color: #0056b3;
+  }
+  
+  .footerBottom {
+    margin-top: 20px;
+    border-top: 1px solid #555;
+    padding-top: 10px;
+    font-size: 0.9rem;
+  }
+  
+  .footerBottom p {
+    margin: 0;
+    color: #ccc;
+  }
+  
+/* Responsiveness */
+
+/* Extra Small Devices (Mobile Portrait) */
+@media screen and (max-width: 575px) {
+  .footerContainer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footerSection {
+    flex: 1 1 auto;
+  }
+}
+
+/* Small Devices (Mobile Landscape) */
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .footer {
+    padding: 30px 15px;
+  }
+
+  .footerSection h4 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Medium Devices (Tablets) */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .footer {
+    padding: 40px 30px;
+  }
+
+  .footerSection h4 {
+    font-size: 1.4rem;
+  }
+
+  .socialLinks a {
+    padding: 8px 12px;
+  }
+}
+
+/* Large Devices (Desktops) */
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .footerContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center-align the sections */
+    gap: 20px; /* Increase the gap for better spacing */
+    width: 90%; /* Ensure the container doesn't stretch too wide */
+    margin: 0 auto; /* Center the container horizontally */
+  }
+
+  .footerSection {
+    flex: 1 1 300px; /* Ensure each section has a minimum width */
+    text-align: center; /* Center the content inside each section */
+    margin: 10px; /* Add some margin for spacing */
+  }
+
+  .footerSection h4 {
+    font-size: 1.6rem; /* Consistent font size for headings */
+    margin-bottom: 15px; /* Space below headings */
+    color: #007BFF; /* Retain consistent heading color */
+  }
+
+  .footerSection p,
+  .footerSection ul {
+    font-size: 1rem; /* Adjust text size for readability */
+    margin-left: 15px;
+  }
+
+  .footerSection ul {
+    display: flex; /* Ensure items are aligned in a row */
+    justify-content: center; /* Center-align list items */
+    gap: 15px; /* Add spacing between list items */
+    padding: 0;
+  }
+
+  .footerSection ul li {
+    margin-bottom: 10px; /* Add space between list items */
+  }
+
+  .socialLinks {
+    display: flex;
+    justify-content: center; /* Center the social links */
+    gap: 15px; /* Space between each social link */
+  }
+
+  .socialLinks a {
+    padding: 8px 12px; /* Adjust padding for better button size */
+    font-size: 1rem; /* Consistent font size */
+    background-color: #007BFF; /* Keep the button color */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth hover effect */
+  }
+
+  .socialLinks a:hover {
+    background-color: #0056b3; /* Darker hover color */
+  }
+
+  .footerBottom {
+    margin-top: 20px;
+    text-align: center; /* Center the bottom text */
+    border-top: 1px solid #555; /* Divider styling */
+    padding-top: 10px;
+    font-size: 0.9rem; /* Smaller font for bottom text */
+    color: #ccc; /* Subtle color */
+  }
+}
+
+/* Extra Large Devices (Wide Screens) */
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+  .footer {
+    padding: 50px 40px;
+  }
+
+  .footerSection {
+    margin: 20px 0;
+  }
+}
+
+/* Ultra Wide Devices (4K Screens) */
+@media screen and (min-width: 1400px) {
+  .footer {
+    padding: 60px 50px;
+  }
+
+  .footerSection h4 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Portrait Orientation */
+@media screen and (orientation: portrait) {
+  .footerContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Landscape Orientation */
+@media screen and (orientation: landscape) {
+  .footerContainer {
+    flex-direction: row;
+  }
+}
+
+/* High Resolution Screens (Retina) */
+@media screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .footer {
+    
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 641px) {
+  .footer {
+    padding: 35px 20px;
+    text-align: center;
+    
+  }
+
+  .footerContainer {
+    flex-direction: column; /* Stack sections vertically */
+    align-items: center;
+    gap: 20px; /* Add space between sections */
+    text-align: center;
+  }
+
+  .footerSection {
+    flex: 1 1 auto; /* Flexible width for each section */
+    margin: 15px 0;
+  }
+
+  .footerSection h4 {
+    font-size: 1.4rem; /* Slightly larger headings for readability */
+    margin-bottom: 10px;
+    color: #007BFF; /* Keep consistent color styling */
+  }
+
+  .footerSection ul {
+    flex-direction: row; /* Stack list items vertically */
+    gap: 10px;
+    margin: 10px 0;
+  }
+
+  .footerSection ul li .quickLink {
+    font-size: 1rem;
+    color: #fff; /* Ensure visibility */
+    text-decoration: none;
+  }
+
+  .footerSection ul li .quickLink:hover {
+    color: #007BFF; /* Consistent hover effect */
+  }
+
+  .socialLinks {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .socialLinks a {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+
+  .socialLinks a:hover {
+    background-color: #0056b3;
+  }
+
+  .footerBottom {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #555;
+    font-size: 0.85rem;
+    color: #ccc;
+  }
+}
+
+@media screen and (min-width:641px) and (max-width:652px) {
+  .footer {
+    padding: 35px 20px;
+    text-align: center;
+    
+  }
+
+  .footerContainer {
+    flex-direction: column; /* Stack sections vertically */
+    align-items: center;
+    gap: 20px; /* Add space between sections */
+    text-align: center;
+  }
+
+  .footerSection {
+    flex: 1 1 auto; /* Flexible width for each section */
+    margin: 15px 0;
+  }
+
+  .footerSection h4 {
+    font-size: 1.4rem; /* Slightly larger headings for readability */
+    margin-bottom: 10px;
+    color: #007BFF; /* Keep consistent color styling */
+  }
+
+  .footerSection ul {
+    flex-direction: row; /* Stack list items vertically */
+    gap: 10px;
+    margin: 10px 0;
+  }
+
+  .footerSection ul li .quickLink {
+    font-size: 1rem;
+    color: #fff; /* Ensure visibility */
+    text-decoration: none;
+  }
+
+  .footerSection ul li .quickLink:hover {
+    color: #007BFF; /* Consistent hover effect */
+  }
+
+  .socialLinks {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .socialLinks a {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+
+  .socialLinks a:hover {
+    background-color: #0056b3;
+  }
+
+  .footerBottom {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #555;
+    font-size: 0.85rem;
+    color: #ccc;
+  }
+  
+}
+
+@media screen and (min-width: 650px) and (max-width: 1200px) {
+  .footer {
+    padding: 40px 25px;
+    text-align: center;
+  }
+
+  .footerContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footerSection {
+    flex: 1 1 45%; /* Two sections per row */
+    margin: 20px 0;
+  }
+
+  .footerSection h4 {
+    font-size: 1.4rem;
+    color: #007BFF;
+    margin-bottom: 15px;
+  }
+
+  .footerSection ul {
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .socialLinks {
+    gap: 15px;
+  }
+
+  .footerBottom {
+    margin-top: 20px;
+    padding-top: 15px;
+    font-size: 0.9rem;
+    color: #ccc;
+  }
+}
+

@@ -1,0 +1,141 @@
+.heading{
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    margin-top: 15px;
+    font-family: "Mona Sans", serif;
+}
+.accountContainer {
+    width: 100%;
+    max-width: 800px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color:transparent;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px white;
+}
+
+.accountContainer h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.profileDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.userImage {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.noImageText {
+    font-size: 1rem;
+    color: #888;
+    margin-bottom: 15px;
+}
+
+.accountContainer p {
+    font-size: 1rem;
+    margin: 5px 0;
+    color: white;
+}
+
+.accountContainer strong {
+    font-weight: bold;
+}
+
+.editButton {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin-inline: auto;
+    padding: 10px 20px;
+    margin: 20px auto;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.editButton:hover {
+    background-color: rgb(57, 57, 209);
+}
+
+.editForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.editForm label {
+    font-size: 1rem;
+    display: block;
+    color: white;
+}
+
+.editForm input[type="email"],
+input[type="file"] {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.editForm input[type="file"] {
+    padding: 5px;
+}
+
+.editActions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.saveButton,
+.cancelButton {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 48%;
+}
+
+.saveButton {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.saveButton:hover {
+    background-color: #45a049;
+}
+
+.cancelButton {
+    background-color: #f44336;
+    color: white;
+}
+
+.cancelButton:hover {
+    background-color: #e53935;
+}
+
+.accountContainer button{
+    font-size: 1.2rem;
+}
+
+.accountContainer button:hover{
+    transform: translateX(-3px);
+}

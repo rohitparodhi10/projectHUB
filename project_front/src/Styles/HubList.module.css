@@ -1,0 +1,210 @@
+/* Container */
+.container {
+    min-height: 100vh;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title{
+    color: white;
+    font-family: "Mona Sans", serif;
+}
+
+/* Project List */
+.projectList {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(600px, 1fr)); /* Automatic grid columns */
+    gap: 20px; /* Gap between items */
+    justify-items: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* Project Item */
+.projectItem {
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+    max-width: 500px; /* Ensure max width for each project item */
+    width: 100%;
+}
+
+.projectItem:hover {
+    transform: translateY(-5px); /* Add hover effect */
+}
+
+/* Project Name */
+.projectName {
+    color: #0366d6; /* GitHub blue for project title */
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Project Description */
+.projectDescription {
+    color: white;
+    margin-bottom: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Stars */
+.stars {
+    margin-bottom: 10px;
+}
+
+.star {
+    color: #f5a623; /* Gold color for stars */
+}
+
+/* Project Email */
+.projectEmail {
+    color: white;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+/* Download Link */
+.downloadLink {
+    display: inline-block;
+    background-color: blue; /* GitHub-like download buttons */
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin-left: 20px;
+}
+
+.downloadLink:hover {
+    background-color: #0366d6; 
+    cursor: pointer;
+}
+
+/* Project Link */
+.projectLink {
+    display: inline-block;
+    background-color: blue; /* GitHub-like project buttons */
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+/* No Projects */
+.noProjects {
+    color: #6a737d;
+    font-size: 1.2rem;
+}
+
+/* Loading/Error Messages */
+.loading, .error {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: #e0245e; /* Red for error */
+}
+
+/* Navigate Button */
+.navigateButton {
+    font-size: 1rem;
+    transition: ease;
+}
+
+.navigateButton:hover {
+    transform: translateX(-3px);
+}
+
+.queryButton{
+    display: inline-block;
+    background-color: blue; /* GitHub-like download buttons */
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin-left: 20px;
+    border: none;
+}
+
+/* Hover Effect for All Buttons */
+.queryButton:hover {
+    background-color: #0366d6; /* Darker blue on hover */
+    cursor: pointer;
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    /* Adjust grid layout for smaller screens */
+    .projectList {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust for smaller screens */
+    }
+
+    .projectName {
+        font-size: 1.2rem; /* Smaller project title on mobile */
+    }
+
+    .projectDescription {
+        font-size: 0.9rem; /* Adjust description font size */
+    }
+
+    .projectEmail {
+        font-size: 0.8rem; /* Adjust font size for email */
+    }
+
+    .projectItem {
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
+
+    .downloadLink, .projectLink {
+        padding: 6px 12px; /* Adjust padding for buttons */
+        font-size: 0.9rem; /* Adjust font size */
+    }
+
+    .loading, .error {
+        font-size: 1.2rem; /* Smaller loading/error message */
+    }
+
+    .navigateButton {
+        font-size: 0.9rem; /* Adjust font size for smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Further adjustment for very small screens */
+    .container {
+        padding: 10px; /* Less padding */
+        margin-left: 5px;
+    }
+
+    .projectName {
+        font-size: 1rem; /* Smaller project title on very small screens */
+    }
+
+    .projectDescription {
+        font-size: 0.8rem; /* Smaller description */
+    }
+
+    .projectEmail {
+        font-size: 0.7rem; /* Smaller font for email */
+    }
+
+    .downloadLink, .projectLink {
+        padding: 5px 10px; /* Smaller buttons */
+        font-size: 0.8rem; /* Smaller font size */
+    }
+}
