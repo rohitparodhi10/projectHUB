@@ -1,4 +1,4 @@
-# Build React frontend
+# Stage 1: Build React frontend using Vite
 FROM node:20 AS frontend-build
 
 WORKDIR /code/project_front
@@ -9,7 +9,7 @@ RUN npm install
 COPY ./project_front/ ./
 RUN npm run build
 
-# Build Django backend
+# Stage 2: Build Django backend
 FROM python:3.11.4
 
 ENV PYTHONDONTWRITEBYTECODE=1
@@ -25,11 +25,12 @@ RUN pip install -r ./projecthub/requirements.txt
 
 COPY ./projecthub/ /code/projecthub/
 
-# Copy React build output to Django templates and static folders
+# Copy React frontend build output to Django
 COPY --from=frontend-build /code/project_front/dist/index.html /code/projecthub/templates/index.html
-COPY --from=frontend-build /code/project_front/dist/static /code/projecthub/static/
+COPY --from=frontend-build /code/project_front/dist/assets /code/projecthub/static/assets/
 
 EXPOSE 8000
+
 WORKDIR /code/projecthub
 
 CMD ["gunicorn", "projecthub.wsgi:application", "--bind", "0.0.0.0:8000"]
