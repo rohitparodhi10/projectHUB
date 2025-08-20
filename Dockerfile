@@ -25,13 +25,14 @@ ENV PYTHONBUFFERED 1
 
 WORKDIR /code
 
-# Install OS-level dependencies needed for Python packages (e.g., mysqlclient)
-RUN apt-get update && apt-get install -y gcc python3-dev libmysqlclient-dev
+# Install OS-level dependencies required by mysqlclient and build tools
+RUN apt-get update && apt-get install -y gcc python3-dev default-libmysqlclient-dev
 
-# Copy requirements and upgrade pip tools before installing packages
+# Copy only requirements, upgrade pip & install packages
 COPY ./projecthub/requirements.txt ./projecthub/
 RUN pip install --upgrade pip setuptools wheel
 RUN pip install -r ./projecthub/requirements.txt
+
 
 # Copy backend source
 COPY ./projecthub/ /code/projecthub/
