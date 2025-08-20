@@ -29,9 +29,8 @@ COPY ./projecthub/ /code/projecthub/
 
 RUN pip install -r ./projecthub/requirements.txt
 
-COPY --from=build-stage ./code/project_front/build /code/projecthub/static/
-COPY --from=build-stage ./code/project_front/build/static /code/projecthub/static/
-COPY --from=build-stage ./code/project_front/build/index.html /code/projecthub/templates/index.html
+COPY --from=build-stage /code/project_front/build /code/projecthub/static/
+COPY --from=build-stage /code/project_front/build/index.html /code/projecthub/templates/index.html
 
 # Run django migration command
 RUN python ./projecthub/manage.py migrate
