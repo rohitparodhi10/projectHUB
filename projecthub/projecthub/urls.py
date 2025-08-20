@@ -23,9 +23,11 @@ from query.urls import *
 from django.conf import settings
 from django.conf.urls.static import static
 from projecthub.views import index
+from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.index, name='index'),
     path('accounts/',include('accounts.urls')),
     path('projectsection/', include("project_section.urls")),
     path('feedback/', include("feedback.urls")),
