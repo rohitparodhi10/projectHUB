@@ -26,8 +26,8 @@ RUN pip install -r ./projecthub/requirements.txt
 COPY ./projecthub/ /code/projecthub/
 
 # Copy React build output to Django templates and static folders
-COPY --from=frontend-build /code/project_front/build/index.html /code/projecthub/templates/index.html
-COPY --from=frontend-build /code/project_front/build/static /code/projecthub/static/
+COPY --from=frontend-build /code/project_front/dist/index.html /code/projecthub/templates/index.html
+COPY --from=frontend-build /code/project_front/dist/static /code/projecthub/static/
 
 EXPOSE 8000
 WORKDIR /code/projecthub
