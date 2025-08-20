@@ -13,7 +13,7 @@ COPY ./project_front/ ./
 RUN npm run build
 
 # Debug: List files in build directory for confirmation
-RUN ls -al /code/project_front/build
+RUN ls -al /code/project_front/dist
 
 # Stage 2:Build Backend
 
@@ -32,8 +32,8 @@ RUN pip install -r ./projecthub/requirements.txt
 # Copy backend source
 COPY ./projecthub/ /code/projecthub/
 
-COPY --from=build-stage /code/project_front/build /code/projecthub/static/
-COPY --from=build-stage /code/project_front/build/index.html /code/projecthub/templates/index.html
+COPY --from=build-stage /code/project_front/dist /code/projecthub/static/
+COPY --from=build-stage /code/project_front/dist/index.html /code/projecthub/templates/index.html
 
 # Run django migration command
 RUN python ./projecthub/manage.py migrate
