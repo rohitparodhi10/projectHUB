@@ -3,7 +3,7 @@ name: Deploy on AWS
 on:
   push:
     branches:
-      ["main"]
+      - main
 
 jobs:
   build-and-deploy:
@@ -23,25 +23,23 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
     
     - name: Build and push Docker image
-      run : |
+      run: |
         docker build -t ${{ secrets.DOCKER_USERNAME }}/projecthub:latest .
         docker push ${{ secrets.DOCKER_USERNAME }}/projecthub:latest
 
     - name: Setup SSH
-      run : |
+      run: |
         mkdir -p ~/.ssh/
         echo "${{ secrets.AWS_EC2_KEY }}" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
         ssh-keyscan -H ${{ secrets.AWS_EC2_IP }} >> ~/.ssh/known_hosts
-    
+
     - name: Deploy on AWS EC2
-      run : |
+      run: |
         ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa ubuntu@${{ secrets.AWS_EC2_IP }} << 'EOF'
           docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
           docker pull ${{ secrets.DOCKER_USERNAME }}/projecthub:latest
           docker stop projecthub || true
           docker rm projecthub || true
-          docker run -d --name projecthub -p 80:8000 ${{ secrets.DOCKER_USERNAME }}/projecthub:latest
+          docker run -d --name projecthub -p 80:8000 --restart unless-stopped ${{ secrets.DOCKER_USERNAME }}/projecthub:latest
         EOF
-
-
