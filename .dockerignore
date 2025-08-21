@@ -1,0 +1,8 @@
+node_modules
+project_front/node_modules
+project_front/dist
+staticfiles
+__pycache__
+*.pyc
+.git
+.env
