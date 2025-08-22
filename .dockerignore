@@ -1,6 +1,4 @@
-node_modules
-project_front/node_modules
-project_front/dist
+sproject_front/dist
 staticfiles
 __pycache__
 *.pyc
