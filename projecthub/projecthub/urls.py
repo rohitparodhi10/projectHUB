@@ -22,22 +22,18 @@ from feedback.urls import *
 from query.urls import *
 from django.conf import settings
 from django.conf.urls.static import static
-from projecthub.views import index
-from . import views
+from .views import ReactAppView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name='index'),
     path('accounts/',include('accounts.urls')),
     path('projectsection/', include("project_section.urls")),
     path('feedback/', include("feedback.urls")),
     path('query/', include("query.urls")),
+    path('', ReactAppView.as_view(), name='react_app'),
+    path('<path:path>', ReactAppView.as_view(), name='react_app_catchall'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
-urlpatterns+=[
-    re_path(r'^(?:.*)/?$', index, name='index')
-]
-    
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
