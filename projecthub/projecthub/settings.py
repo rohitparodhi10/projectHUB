@@ -145,6 +145,8 @@ STATIC_ROOT = BASE_DIR / "projecthub" / "staticfiles"
 # WhiteNoise configuration for serving static files
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+WHITENOISE_MANIFEST_STRICT = False
+
 # Configure WhiteNoise to serve correct MIME types
 WHITENOISE_MIMETYPES = {
     '.js': 'text/javascript',
