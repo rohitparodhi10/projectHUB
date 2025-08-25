@@ -136,8 +136,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / "projecthub" / "static"]
-STATIC_ROOT = BASE_DIR / "projecthub/staticfiles"
+STATICFILES_DIRS = [
+    BASE_DIR / "projecthub" / "static",
+    BASE_DIR / "projecthub" / "static" / "assets",
+    ]
+STATIC_ROOT = BASE_DIR / "projecthub" / "staticfiles"
 
 # WhiteNoise configuration for serving static files
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
