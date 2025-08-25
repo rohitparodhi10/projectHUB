@@ -26,8 +26,10 @@ RUN pip install -r ./projecthub/requirements.txt
 COPY ./projecthub/ /code/projecthub/
 
 # Copy React frontend build output to Django
-COPY --from=frontend-build /code/project_front/dist/index.html /code/projecthub/templates/index.html
 COPY --from=frontend-build /code/project_front/dist/assets /code/projecthub/static/assets/
+COPY --from=frontend-build /code/project_front/dist/index.html /code/projecthub/templates/index.html
+# If there are other files in dist (e.g., favicon, manifest), copy them too:
+COPY --from=frontend-build /code/project_front/dist/* /code/projecthub/static/
 
 EXPOSE 8000
 
