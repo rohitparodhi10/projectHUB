@@ -29,6 +29,8 @@ COPY ./projecthub/ /code/projecthub/
 COPY --from=frontend-build /code/project_front/dist/assets /code/projecthub/static/assets/
 COPY --from=frontend-build /code/project_front/dist/index.html /code/projecthub/templates/index.html
 
+WORKDIR /code/projecthub
+
 RUN python manage.py collectstatic --noinput
 
 EXPOSE 8000
