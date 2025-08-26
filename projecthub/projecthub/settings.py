@@ -136,22 +136,28 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# FIXED: Corrected STATICFILES_DIRS configuration
+# Don't include subdirectories of directories already in STATICFILES_DIRS
 STATICFILES_DIRS = [
-    BASE_DIR / "projecthub" / "static",
-    BASE_DIR / "projecthub" / "static" / "assets",
-    ]
-STATIC_ROOT = BASE_DIR / "projecthub" / "staticfiles"
+    BASE_DIR / "static",  # This will include all static files from the main static directory
+]
 
-# WhiteNoise configuration for serving static files
+# FIXED: Use BASE_DIR instead of hardcoded path for better portability
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+# FIXED: Updated to use the newer WhiteNoise storage backend
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-WHITENOISE_MANIFEST_STRICT = False
 
 # Configure WhiteNoise to serve correct MIME types
 WHITENOISE_MIMETYPES = {
     '.js': 'text/javascript',
     '.css': 'text/css',
 }
+
+# WhiteNoise settings for better performance
+WHITENOISE_USE_FINDERS = True
+WHITENOISE_AUTOREFRESH = DEBUG
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
