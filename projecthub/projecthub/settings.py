@@ -147,7 +147,12 @@ STATICFILES_DIRS = [
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # FIXED: Updated to use the newer WhiteNoise storage backend
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STORAGES = {
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
+
 
 # Configure WhiteNoise to serve correct MIME types
 WHITENOISE_MIMETYPES = {

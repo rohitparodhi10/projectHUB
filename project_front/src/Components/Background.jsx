@@ -17,19 +17,19 @@ function Background() {
                 break;
 
             case "/login":
-                document.body.style.backgroundImage="url(pictures/login.jpg)";
+                document.body.style.backgroundImage="url(/static/pictures/login.jpg)";
                 document.body.style.backgroundSize="cover";
                 document.body.style.backgroundRepeat="no-repeat";
                 break;
             
             case "/register":
-                document.body.style.backgroundImage="url(pictures/login.jpg)";
+                document.body.style.backgroundImage="url(/static/pictures/login.jpg)";
                 document.body.style.backgroundSize="cover";
                 document.body.style.backgroundRepeat="no-repeat";
                 break;
             
             case "/forgot":
-                document.body.style.backgroundImage="url(pictures/forgot.jpg)";
+                document.body.style.backgroundImage="url(/static/pictures/forgot.jpg)";
                 document.body.style.backgroundSize="cover";
                 document.body.style.backgroundPosition="no-repeat";
                 break;
@@ -39,7 +39,7 @@ function Background() {
                 break;  
             
             case "/query":
-                document.body.style.backgroundImage="url(pictures/query.jpg)";
+                document.body.style.backgroundImage="url(/static/pictures/query.jpg)";
                 document.body.style.backgroundSize="cover";
                 document.body.style.backgroundPosition="no-repeat";
                 break;
@@ -55,7 +55,7 @@ function Background() {
                 break;
 
             case "/projectupload":
-                document.body.style.backgroundImage="url(pictures/projectupload.jpg)";
+                document.body.style.backgroundImage="url(/static/pictures/projectupload.jpg)";
                 document.body.style.backgroundRepeat="no-repeat";
                 document.body.style.backgroundSize="cover";
                 break;
