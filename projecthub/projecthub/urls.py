@@ -22,17 +22,26 @@ from feedback.urls import *
 from query.urls import *
 from django.conf import settings
 from django.conf.urls.static import static
-from .views import ReactAppView
-
+from django.views.static import serve
+import os
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/',include('accounts.urls')),
     path('projectsection/', include("project_section.urls")),
     path('feedback/', include("feedback.urls")),
     path('query/', include("query.urls")),
-    path('', ReactAppView.as_view(), name='react_app'),
+    re_path(r'^pictures/(?P<path>.*)$', serve, {
+        'document_root': os.path.join(settings.STATIC_ROOT, 'pictures'),
+    }),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+else:
+    # For production, also serve the pictures mapping
+    urlpatterns += [
+        re_path(r'^pictures/(?P<path>.*)$', serve, {
+            'document_root': os.path.join(settings.STATIC_ROOT, 'pictures'),
+        }),
+    ]
 
