@@ -15,7 +15,7 @@ function Home() {
       <nav className={styles.nav}>
         <ul className={styles.navList}>
           <li className={styles.navItem}>
-            <img src="/pictures/logo.png" alt="Logo" className={styles.logo} />
+            <img src="/static/pictures/logo.png" alt="Logo" className={styles.logo} />
           </li>
           <li className={styles.navItem}>
             <Link to="/" className={styles.navLink}>Home</Link>

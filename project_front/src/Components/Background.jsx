@@ -8,7 +8,7 @@ function Background() {
     useEffect(()=>{
         switch(location.pathname){
             case "/":
-                document.body.style.backgroundImage="url(pictures/home.jpg)";
+                document.body.style.backgroundImage="url(/static/pictures/home.jpg)";
                 document.body.style.backgroundColor="black";
                 document.body.style.backgroundSize="cover";
                 document.body.style.backgroundRepeat="no-repeat";
