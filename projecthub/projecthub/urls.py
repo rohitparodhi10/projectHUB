@@ -23,6 +23,7 @@ from query.urls import *
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views.static import serve
+
 import os
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,6 +31,10 @@ urlpatterns = [
     path('projectsection/', include("project_section.urls")),
     path('feedback/', include("feedback.urls")),
     path('query/', include("query.urls")),
+    re_path(r'^pictures/(?P<path>.*)$', serve, {
+    'document_root': os.path.join(settings.BASE_DIR, 'static', 'pictures'),
+}),
+
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
