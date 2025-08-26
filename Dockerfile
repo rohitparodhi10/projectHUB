@@ -23,8 +23,9 @@ RUN pip install -r ./projecthub/requirements.txt
 # Copy Django project
 COPY ./projecthub/ /code/projecthub/
 
-# Create static directory structure
+# Create static directory structure BEFORE copying files
 RUN mkdir -p /code/projecthub/static/assets
+RUN mkdir -p /code/projecthub/static/pictures
 RUN mkdir -p /code/projecthub/staticfiles
 
 # Copy frontend build files to the correct static directory
@@ -35,16 +36,19 @@ COPY --from=frontend-build /code/project_front/dist/index.html /code/projecthub/
 # Set working directory
 WORKDIR /code/projecthub
 
-# Collect static files
+# Collect static files AFTER copying
 RUN python manage.py collectstatic --noinput --clear
+
+# Fix permissions for static files
+RUN chmod -R 755 /code/projecthub/staticfiles/
 
 # Verify static files were collected (for debugging)
 RUN echo "=== Checking static files ===" && \
-    ls -la /code/projecthub/ | grep static && \
-    ls -la /code/projecthub/staticfiles/ || echo "No staticfiles directory found"
+    ls -la /code/projecthub/staticfiles/ && \
+    ls -la /code/projecthub/staticfiles/pictures/ || echo "No pictures found"
 
 # Expose port
 EXPOSE 8000
 
-# Start the application
-CMD ["gunicorn", "projecthub.wsgi:application", "--bind", "0.0.0.0:8000"]
+# CRITICAL: Use proper Gunicorn command with WhiteNoise
+CMD ["gunicorn", "projecthub.wsgi:application", "--bind", "0.0.0.0:8000", "--workers", "3"]
