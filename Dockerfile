@@ -29,6 +29,7 @@ RUN mkdir -p /code/projecthub/staticfiles
 
 # Copy frontend build files to the correct static directory
 COPY --from=frontend-build /code/project_front/dist/assets /code/projecthub/static/assets
+COPY --from=frontend-build /code/project_front/dist/pictures /code/projecthub/static/pictures
 COPY --from=frontend-build /code/project_front/dist/index.html /code/projecthub/templates/index.html
 
 # Set working directory
