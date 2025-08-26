@@ -30,18 +30,7 @@ urlpatterns = [
     path('projectsection/', include("project_section.urls")),
     path('feedback/', include("feedback.urls")),
     path('query/', include("query.urls")),
-    re_path(r'^pictures/(?P<path>.*)$', serve, {
-        'document_root': os.path.join(settings.STATIC_ROOT, 'pictures'),
-    }),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-else:
-    # For production, also serve the pictures mapping
-    urlpatterns += [
-        re_path(r'^pictures/(?P<path>.*)$', serve, {
-            'document_root': os.path.join(settings.STATIC_ROOT, 'pictures'),
-        }),
-    ]
-
