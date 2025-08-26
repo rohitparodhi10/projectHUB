@@ -23,6 +23,8 @@ from query.urls import *
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic.base import RedirectView
+from django.views.static import serve
+from django.views.generic import TemplateView
 
 import os
 urlpatterns = [
@@ -31,8 +33,13 @@ urlpatterns = [
     path('projectsection/', include("project_section.urls")),
     path('feedback/', include("feedback.urls")),
     path('query/', include("query.urls")),
-    re_path(r'^pictures/(?P<path>.*)$',
-            RedirectView.as_view(url='/static/pictures/%(path)s', permanent=True)),
+    
+    # Static files patterns (keep these)
+    re_path(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
+    re_path(r'^pictures/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
+    
+    # Serve React app for ALL other routes (this should be LAST)
+    re_path(r'^.*$', TemplateView.as_view(template_name='index.html')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
