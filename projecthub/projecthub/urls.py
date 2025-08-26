@@ -31,7 +31,6 @@ urlpatterns = [
     path('feedback/', include("feedback.urls")),
     path('query/', include("query.urls")),
     path('', ReactAppView.as_view(), name='react_app'),
-    path('<path:path>', ReactAppView.as_view(), name='react_app_catchall'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
