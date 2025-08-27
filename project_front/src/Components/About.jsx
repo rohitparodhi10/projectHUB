@@ -25,7 +25,7 @@ const About = () => {
         </div>
         <div className={styles.image}>
           <img
-            src="pictures/vision.jpg"
+            src="/static/pictures/vision.jpg"
             alt="Team Vision"
           />
         </div>
@@ -34,7 +34,7 @@ const About = () => {
       <div className={styles.section}>
         <div className={styles.image}>
           <img
-            src="pictures/approach.jpg"
+            src="/static/pictures/approach.jpg"
             alt="Team Approach"
           />
         </div>
@@ -63,7 +63,7 @@ const About = () => {
         </div>
         <div className={styles.image}>
           <img
-            src="pictures/process.jpg"
+            src="/static/pictures/process.jpg"
             alt="Development Process"
           />
         </div>
