@@ -88,7 +88,7 @@ function Account() {
             }
 
             const userId = user.id;
-            const url = `http://ec2-13-235-79-109.ap-south-1.compute.amazonaws.com/accounts/update/${userId}/`;  // Full URL
+            const url = `http://ec2-65-0-107-88.ap-south-1.compute.amazonaws.com/accounts/update/${userId}/`;  // Full URL
 
             const response = await api.patch(url, formDataToSend, {
                 headers: {
